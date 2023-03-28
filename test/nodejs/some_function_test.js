@@ -1,7 +1,7 @@
 var duckdb = require('../../duckdb/tools/nodejs');
 var assert = require('assert');
 
-describe(`quack extension`, () => {
+describe(`some_function extension`, () => {
     let db;
     let conn;
     before((done) => {
@@ -11,9 +11,9 @@ describe(`quack extension`, () => {
     });
 
     it('function should return expected constant', function (done) {
-        db.all("SELECT quack('Sam') as value;", function (err, res) {
+        db.all("SELECT some_function('Sam') as value;", function (err, res) {
             if (err) throw err;
-            assert.deepEqual(res, [{value: "Quack Sam 🐥"}]);
+            assert.deepEqual(res, [{value: "Some_function Sam 🐥"}]);
             done();
         });
     });
